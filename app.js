@@ -12,7 +12,7 @@ let data = {
     },
     textNode: {
         innerText: {},
-        outerText: {},
+        textContent: {},
         innerHTML: {},
         outerHTML: {}
     }
