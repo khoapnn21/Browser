@@ -7,7 +7,7 @@ let data = {
     },
     attributeNode: {
         direct: {},
-        indirect: {},
+        method: {},
         classList: {}
     },
     textNode: {
