@@ -4,14 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>    
     <h1>DOM tree</h1>
     <div id="container"></div>
 
-    <script src="./app.js"> </script>
-    
+   
+    <hr>
+
+    <div class="main ">
+
+        <form action="" method="POST" class="form" id="form-1">
+          <h3 class="heading">Thông tin bản thân</h3>
+      
+      
+          <div class="form-group">
+            <label for="fullname" class="form-label">Tên đầy đủ</label>
+            <input id="fullname" name="fullname" type="text" placeholder="VD: Khoa Pham" class="form-control">
+            <span class="form-message"></span>
+          </div>
+      
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="text" placeholder="VD: Khoa@gmail.com" class="form-control">
+            <span class="form-message"></span>
+          </div>
+      
+          <div class="form-group">
+            <label for="address" class="form-label">địa chỉ</label>
+            <input id="address" name="address" type="text" placeholder="VD: 19 ĐBP f16 Q.BT" class="form-control">
+            <span class="form-message"></span>
+          </div>
+      
+          <div class="form-group">
+            <label for="PhoneNumbers" class="form-label">Số điện thoại</label>
+            <input id="PhoneNumbers" name="PhoneNumbers" placeholder="VD 090...." type="number" class="form-control">
+            <span class="form-message"></span>
+          </div>
+      
+
+          <button type="submit" class="form-submit" onclick="return false" >Đăng ký</button>
+        </form>
+      
+      </div>
+
+        
+
+
+
+
+
+    <script defer src="./app.js">  </script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

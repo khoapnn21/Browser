@@ -7,12 +7,12 @@ let data = {
     },
     attributeNode: {
         direct: {},
-        method: {},
+        indirect: {},
         classList: {}
     },
     textNode: {
         innerText: {},
-        textContent: {},
+        outerText: {},
         innerHTML: {},
         outerHTML: {}
     }
@@ -47,17 +47,94 @@ let container = document.getElementById('container')
 treeDom (container, data)
 
 
-// -------------------------------------------------
+//---------------------------------------------------
 
-function cssElement() {
-    let ul = document.querySelector('ul')
-    ul.setAttribute('style', 'color:red')
+function nameForm() {
+    let form = document.getElementById('form-1')
 
-    let ul2 = ul.querySelectorAll('li>ul')
-    for(let key in ul2) {
-        ul2[key].setAttribute('style', 'color:blue')
+    let input = form.querySelectorAll('input')[0]   
 
-    }
-
+    let error = input.parentElement.querySelector('span')
+    input.onblur = function() {
+        let range = input.value.length
+        if (range < 6 ) { 
+          input.classList.add('invalid');
+          error.innerHTML = 'Vui lòng nhập đầy đủ Họ và Tên'
+        }
+      };
+      
+      input.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+          this.classList.remove('invalid');
+          error.innerHTML = "";
+        }
+      };
 }
-cssElement()
+
+nameForm();
+
+function emailForm() {
+    let form = document.getElementById('form-1')
+    let input = form.querySelectorAll('input')[1]
+    let error = input.parentElement.querySelector('span')
+    input.onblur = function() {
+        if (!input.value.includes('@')) { 
+          input.classList.add('invalid');
+          error.innerHTML = 'Email không đúng.'
+        }
+      };
+      
+      input.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+          this.classList.remove('invalid');
+          error.innerHTML = "";
+        }
+      };
+}
+
+emailForm();
+
+function addressForm() {
+    let form = document.getElementById('form-1')
+
+    let input = form.querySelectorAll('input')[2]   
+
+    let error = input.parentElement.querySelector('span')
+    input.onblur = function() {
+        let range = input.value.length
+        if (range < 6 ) { 
+          input.classList.add('invalid');
+          error.innerHTML = 'Vui lòng nhập địa chỉ'
+        }
+      };
+      
+      input.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+          this.classList.remove('invalid');
+          error.innerHTML = "";
+        }
+      };
+}
+
+addressForm();
+
+function phoneNumbersForm() {
+    let form = document.getElementById('form-1')
+    let input = form.querySelectorAll('input')[3]
+    let error = input.parentElement.querySelector('span')
+    input.onblur = function() {
+        let range = input.value
+        if (range.length < 10) { 
+          input.classList.add('invalid');
+          error.innerHTML = 'Số điện thoại gồm 10 số'
+        }
+      };
+      
+      input.onfocus = function() {
+        if (this.classList.contains('invalid')) {
+          this.classList.remove('invalid');
+          error.innerHTML = "";
+        }
+      };
+}
+phoneNumbersForm();
